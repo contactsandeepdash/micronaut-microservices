@@ -1,5 +1,6 @@
 package com.dash;
 
+import io.micronaut.http.HttpStatus;
 import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -17,12 +18,12 @@ public class HelloWorldControllerTest {
     @Test
     void welcomeEndpointResponseWithProperContent() {
         String response = httpClient.toBlocking().retrieve("/");
-        Assertions.assertEquals("Welcome to Micronaut!",response);
+        Assertions.assertEquals("Welcome to Micronaut from service!",response);
     }
 
     @Test
     void helloWorldEndpointResponseWithProperContent() {
         String response = httpClient.toBlocking().retrieve("/hello");
-        Assertions.assertEquals("Hello World!",response);
+        Assertions.assertEquals("Hello from service!",response);
     }
 }
