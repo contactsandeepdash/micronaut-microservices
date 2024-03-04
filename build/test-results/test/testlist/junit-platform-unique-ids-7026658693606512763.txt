@@ -1,0 +1,2 @@
+[engine:junit-jupiter]/[class:com.dash.HelloWorldControllerTest]/[method:welcomeEndpointResponseWithProperContent()]
+[engine:junit-jupiter]/[class:com.dash.HelloWorldControllerTest]/[method:helloWorldEndpointResponseWithProperContent()]

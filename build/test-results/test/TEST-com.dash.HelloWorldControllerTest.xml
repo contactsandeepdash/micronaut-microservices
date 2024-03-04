@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dash.HelloWorldControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-04T17:45:06" hostname="Sandeeps-MacBook-Air.local" time="0.273">
+  <properties/>
+  <testcase name="welcomeEndpointResponseWithProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.268"/>
+  <testcase name="helloWorldEndpointResponseWithProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.004"/>
+  <system-out><![CDATA[?[36m23:15:06.213?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
