@@ -18,12 +18,26 @@ public class HelloWorldControllerTest {
     @Test
     void welcomeEndpointResponseWithProperContent() {
         String response = httpClient.toBlocking().retrieve("/");
-        Assertions.assertEquals("Welcome to Micronaut from service!",response);
+        Assertions.assertEquals("Welcome to Micronaut from service!", response);
     }
 
     @Test
     void helloWorldEndpointResponseWithProperContent() {
         String response = httpClient.toBlocking().retrieve("/hello");
-        Assertions.assertEquals("Hello from service!",response);
+        Assertions.assertEquals("Hello from service!", response);
+    }
+
+    @Test
+    void welcomeEndpointResponseWithCodeAndProperContent() {
+        var response = httpClient.toBlocking().exchange("/", String.class);
+        Assertions.assertEquals(HttpStatus.OK, response.getStatus());
+        Assertions.assertEquals("Welcome to Micronaut from service!", response.getBody().get());
+    }
+
+    @Test
+    void helloWorldEndpointResponseWithCodeAndProperContent() {
+        var response = httpClient.toBlocking().exchange("/hello", String.class);
+        Assertions.assertEquals(HttpStatus.OK, response.getStatus());
+        Assertions.assertEquals("Hello from service!", response.getBody().get());
     }
 }
