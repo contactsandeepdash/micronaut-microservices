@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">4</div>
+<div class="counter">6</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.291s</div>
+<div class="counter">0.219s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">83%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,13 +61,41 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="helloTranslationEndpointReturnsMessage()"></a>
+<h3 class="failures">helloTranslationEndpointReturnsMessage()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;{&quot;de&quot;:&quot;Hallo Welt&quot;,&quot;en&quot;:&quot;Hello World&quot;}&gt; but was: &lt;io.micronaut.json.tree.JsonObject@92a2494e&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at app//com.dash.HelloWorldControllerTest.helloTranslationEndpointReturnsMessage(HelloWorldControllerTest.java:56)
+	at java.base@21.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at app//io.micronaut.test.extensions.junit5.MicronautJunit5Extension$2.proceed(MicronautJunit5Extension.java:142)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.interceptEach(AbstractMicronautExtension.java:157)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.interceptTest(AbstractMicronautExtension.java:114)
+	at app//io.micronaut.test.extensions.junit5.MicronautJunit5Extension.interceptTestMethod(MicronautJunit5Extension.java:129)
+	at java.base@21.0.2/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.2/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,8 +106,18 @@
 </tr>
 </thead>
 <tr>
+<td class="success">helloFromConfigEndpointReturnsMessageFromConfigFile()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">helloTranslationEndpointReturnsMessage()</td>
+<td class="failures">0.022s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
 <td class="success">helloWorldEndpointResponseWithCodeAndProperContent()</td>
-<td class="success">0.275s</td>
+<td class="success">0.180s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -89,22 +127,24 @@
 </tr>
 <tr>
 <td class="success">welcomeEndpointResponseWithCodeAndProperContent()</td>
-<td class="success">0.005s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">welcomeEndpointResponseWithProperContent()</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>?[36m09:13:00.685?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
-?[36m09:13:01.183?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
-?[36m09:13:01.196?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
+<pre>?[36m12:05:24.196?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
+?[36m12:05:24.651?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
+?[36m12:05:24.661?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Return translated Hello from config message: com.dash.configuration.HelloWorldTranslationConfig$Intercepted@363d4555
+?[36m12:05:24.684?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
+?[36m12:05:24.688?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Return Hello from config message: Hello from application.yml
 </pre>
 </span>
 </div>
@@ -116,7 +156,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at 05-Mar-2024, 9:13:01 am</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at 06-Mar-2024, 12:05:24 pm</p>
 </div>
 </div>
 </body>

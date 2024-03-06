@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dash.HelloWorldControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-03-05T03:43:00" hostname="Sandeeps-MacBook-Air.local" time="0.294">
+<testsuite name="com.dash.HelloWorldControllerTest" tests="6" skipped="0" failures="1" errors="0" timestamp="2024-03-06T06:35:24" hostname="Sandeeps-MacBook-Air.local" time="0.222">
   <properties/>
-  <testcase name="helloWorldEndpointResponseWithCodeAndProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.275"/>
-  <testcase name="welcomeEndpointResponseWithProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.006"/>
+  <testcase name="helloWorldEndpointResponseWithCodeAndProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.18"/>
+  <testcase name="welcomeEndpointResponseWithProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.005"/>
   <testcase name="helloWorldEndpointResponseWithProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.005"/>
-  <testcase name="welcomeEndpointResponseWithCodeAndProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.005"/>
-  <system-out><![CDATA[?[36m09:13:00.685?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
-?[36m09:13:01.183?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
-?[36m09:13:01.196?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
+  <testcase name="helloTranslationEndpointReturnsMessage()" classname="com.dash.HelloWorldControllerTest" time="0.022">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;{&quot;de&quot;:&quot;Hallo Welt&quot;,&quot;en&quot;:&quot;Hello World&quot;}&gt; but was: &lt;io.micronaut.json.tree.JsonObject@92a2494e&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;{&quot;de&quot;:&quot;Hallo Welt&quot;,&quot;en&quot;:&quot;Hello World&quot;}&gt; but was: &lt;io.micronaut.json.tree.JsonObject@92a2494e&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at app//com.dash.HelloWorldControllerTest.helloTranslationEndpointReturnsMessage(HelloWorldControllerTest.java:56)
+	at java.base@21.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at app//io.micronaut.test.extensions.junit5.MicronautJunit5Extension$2.proceed(MicronautJunit5Extension.java:142)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.interceptEach(AbstractMicronautExtension.java:157)
+	at app//io.micronaut.test.extensions.AbstractMicronautExtension.interceptTest(AbstractMicronautExtension.java:114)
+	at app//io.micronaut.test.extensions.junit5.MicronautJunit5Extension.interceptTestMethod(MicronautJunit5Extension.java:129)
+	at java.base@21.0.2/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.2/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="welcomeEndpointResponseWithCodeAndProperContent()" classname="com.dash.HelloWorldControllerTest" time="0.004"/>
+  <testcase name="helloFromConfigEndpointReturnsMessageFromConfigFile()" classname="com.dash.HelloWorldControllerTest" time="0.003"/>
+  <system-out><![CDATA[?[36m12:05:24.196?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
+?[36m12:05:24.651?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
+?[36m12:05:24.661?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Return translated Hello from config message: com.dash.configuration.HelloWorldTranslationConfig$Intercepted@363d4555
+?[36m12:05:24.684?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Called the Welcome API!
+?[36m12:05:24.688?[0;39m ?[1;30m[default-nioEventLoopGroup-1-3]?[0;39m ?[39mDEBUG?[0;39m ?[35mc.d.controller.HelloWorldController?[0;39m - Return Hello from config message: Hello from application.yml
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
