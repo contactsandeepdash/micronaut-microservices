@@ -2,9 +2,9 @@ package com.dash;
 
 import io.micronaut.runtime.Micronaut;
 
-public class Application {
+public class MnMicroServicesApplication {
 
     public static void main(String[] args) {
-        Micronaut.run(Application.class, args);
+        Micronaut.run(MnMicroServicesApplication.class, args);
     }
 }
