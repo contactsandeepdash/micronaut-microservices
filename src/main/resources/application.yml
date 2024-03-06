@@ -2,3 +2,5 @@
 micronaut:
   application:
     name: micronaut-microservices
+  server:
+    port: ${SERVER_PORT:8090}
